@@ -10,6 +10,12 @@ public abstract class Animal {
     private boolean defaultHaveWool;
     private int defaultVoiceVolume;
 
+    public Animal(){
+
+        setDefault();
+    }
+    protected abstract void setDefault();
+
     public double getDefaultHeight() {
         return defaultHeight;
     }

@@ -1,40 +1,33 @@
 public class Dog extends Animal {
 
     Dog (){
-        setDefault();
+        super();
     }
 
     Dog (double Height, double Weight){
-        setDefault();
+        this();
         setHeight(Height);
         setWeight(Weight);
     }
 
     Dog (double Height, double Weight, int VoiceVolume){
-        setDefault();
-        setHeight(Height);
-        setWeight(Weight);
+        this(Height, Weight);
         setVoiceVolume(VoiceVolume);
     }
 
     Dog (double Height, double Weight, boolean haveWool){
-        setDefault();
-        setHeight(Height);
-        setWeight(Weight);
+        this(Height, Weight);
         setHaveWool(haveWool);
     }
 
     Dog (double Height, double Weight, int VoiceVolume, boolean haveWool){
-
-        setHeight(Height);
-        setWeight(Weight);
+        this(Height, Weight);
         setVoiceVolume(VoiceVolume);
         setHaveWool(haveWool);
-        setDefault();
-
     }
 
-    void setDefault (){
+    @Override
+    protected void setDefault (){
         setDefaultHeight(1);
         setDefaultWeight(10);
         setDefaultHaveWool(true);

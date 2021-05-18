@@ -1,40 +1,33 @@
 public class Duck extends Animal {
 
     Duck (){
-        setDefault();
+        super();
     }
 
     Duck (double Height, double Weight){
-        setDefault();
+        this();
         setHeight(Height);
         setWeight(Weight);
     }
 
     Duck (double Height, double Weight, int VoiceVolume){
-        setDefault();
-        setHeight(Height);
-        setWeight(Weight);
+        this(Height, Weight);
         setVoiceVolume(VoiceVolume);
     }
 
     Duck (double Height, double Weight, boolean haveWool){
-        setDefault();
-        setHeight(Height);
-        setWeight(Weight);
+        this(Height, Weight);
         setHaveWool(haveWool);
     }
 
     Duck (double Height, double Weight, int VoiceVolume, boolean haveWool){
-
-        setHeight(Height);
-        setWeight(Weight);
+        this(Height, Weight);
         setVoiceVolume(VoiceVolume);
         setHaveWool(haveWool);
-        setDefault();
-
     }
 
-    void setDefault (){
+    @Override
+    protected void setDefault (){
         setDefaultHeight(0.3);
         setDefaultWeight(3);
         setDefaultHaveWool(false);

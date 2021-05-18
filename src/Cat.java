@@ -1,41 +1,33 @@
 public class Cat extends Animal {
 
     Cat (){
-        setDefault();
+        super();
     }
 
     Cat (double Height, double Weight){
-        setDefault();
+        this();
         setHeight(Height);
         setWeight(Weight);
     }
 
     Cat (double Height, double Weight, int VoiceVolume){
-        setDefault();
-        setHeight(Height);
-        setWeight(Weight);
+        this(Height, Weight);
         setVoiceVolume(VoiceVolume);
     }
 
     Cat (double Height, double Weight, boolean haveWool){
-        setDefault();
-        setHeight(Height);
-        setWeight(Weight);
+        this(Height, Weight);
         setHaveWool(haveWool);
     }
 
     Cat (double Height, double Weight, int VoiceVolume, boolean haveWool){
-
-        setDefault();
-        setHeight(Height);
-        setWeight(Weight);
+        this(Height, Weight);
         setVoiceVolume(VoiceVolume);
         setHaveWool(haveWool);
-
-
     }
 
-    void setDefault (){
+    @Override
+    protected void setDefault(){
         setDefaultHeight(0.5);
         setDefaultWeight(4);
         setDefaultHaveWool(true);
