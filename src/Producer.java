@@ -1,9 +1,9 @@
 public class Producer {
     public static void main(String[] args) {
 
-        Animal ayka = new Cat(0.30,5,90,true);
-        Animal sipsik = new Dog(0.35,7,200,true);
-        Animal strangeDuck = new Duck(0.5,1,1000,true);
+        Animal ayka = new Cat(0.30,5,90,true, BreedsOfCats.TURKISH_VAN);
+        Animal sipsik = new Dog(0.35,7,200,true, BreedsOfDogs.CHIHUAHUA);
+        Animal strangeDuck = new Duck(0.5,1,1000,true, BreedsOfDucks.STRANGE);
 
         printInfo(ayka);
         printInfo(sipsik);

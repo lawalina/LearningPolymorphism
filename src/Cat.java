@@ -1,37 +1,41 @@
 public class Cat extends Animal {
 
+    private BreedsOfCats breed;
+
     Cat (){
-        super();
+        this.height=0.3;
+        this.weight=5;
+        this.voiceVolume=70;
+        this.haveWool=true;
+        this.breed=BreedsOfCats.UNBREEDED;
     }
 
     Cat (double Height, double Weight){
         this();
-        setHeight(Height);
-        setWeight(Weight);
+        this.height=Height;
+        this.weight=Weight;
     }
 
     Cat (double Height, double Weight, int VoiceVolume){
         this(Height, Weight);
-        setVoiceVolume(VoiceVolume);
+        this.voiceVolume=VoiceVolume;
     }
 
     Cat (double Height, double Weight, boolean haveWool){
         this(Height, Weight);
-        setHaveWool(haveWool);
+        this.haveWool=haveWool;
     }
 
     Cat (double Height, double Weight, int VoiceVolume, boolean haveWool){
         this(Height, Weight);
-        setVoiceVolume(VoiceVolume);
-        setHaveWool(haveWool);
+        this.voiceVolume=VoiceVolume;
+        this.haveWool=haveWool;
     }
 
-    @Override
-    protected void setDefault(){
-        setDefaultHeight(0.5);
-        setDefaultWeight(4);
-        setDefaultHaveWool(true);
-        setDefaultVoiceVolume(70);
+
+    Cat (double Height, double Weight, int VoiceVolume, boolean haveWool, BreedsOfCats breed ){
+        this(Height, Weight, VoiceVolume, haveWool);
+        this.breed=breed;
     }
 
     @Override
@@ -48,6 +52,7 @@ public class Cat extends Animal {
             System.out.println("The cat has no wool.");
 
         System.out.println("Cat volume is " + getVoiceVolume() + ".");
+        System.out.println("This cat is a " + breed.getNameToPrint() + ".");
         System.out.println();
 
     }

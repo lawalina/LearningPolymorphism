@@ -1,52 +1,9 @@
 public abstract class Animal {
 
-    private double height;
-    private double weight;
-    private boolean haveWool;
-    private int voiceVolume;
-
-    private double defaultHeight;
-    private double defaultWeight;
-    private boolean defaultHaveWool;
-    private int defaultVoiceVolume;
-
-    public Animal(){
-
-        setDefault();
-    }
-    protected abstract void setDefault();
-
-    public double getDefaultHeight() {
-        return defaultHeight;
-    }
-
-    public void setDefaultHeight(double defaultHeight) {
-        this.defaultHeight = defaultHeight;
-    }
-
-    public double getDefaultWeight() {
-        return defaultWeight;
-    }
-
-    public void setDefaultWeight(double defaultWeight) {
-        this.defaultWeight = defaultWeight;
-    }
-
-    public boolean isDefaultHaveWool() {
-        return defaultHaveWool;
-    }
-
-    public void setDefaultHaveWool(boolean defaultHaveWool) {
-        this.defaultHaveWool = defaultHaveWool;
-    }
-
-    public int getDefaultVoiceVolume() {
-        return defaultVoiceVolume;
-    }
-
-    public void setDefaultVoiceVolume(int defaultVoiceVolume) {
-        this.defaultVoiceVolume = defaultVoiceVolume;
-    }
+    protected double height;
+    protected double weight;
+    protected boolean haveWool;
+    protected int voiceVolume;
 
     public double getHeight() {
         return height;
@@ -79,6 +36,7 @@ public abstract class Animal {
     public void setVoiceVolume(int voiceVolume) {
         this.voiceVolume = voiceVolume;
     }
+
 
     public abstract void printInfo ();
 

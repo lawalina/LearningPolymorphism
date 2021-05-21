@@ -1,37 +1,41 @@
 public class Dog extends Animal {
 
+    private BreedsOfDogs breed;
+
     Dog (){
-        super();
+        this.height=0.5;
+        this.weight=7;
+        this.voiceVolume=70;
+        this.haveWool=true;
+        this.breed=BreedsOfDogs.UNBREEDED;
     }
 
     Dog (double Height, double Weight){
         this();
-        setHeight(Height);
-        setWeight(Weight);
+        this.height=Height;
+        this.weight=Weight;
     }
 
     Dog (double Height, double Weight, int VoiceVolume){
         this(Height, Weight);
-        setVoiceVolume(VoiceVolume);
+        this.voiceVolume=VoiceVolume;
     }
 
     Dog (double Height, double Weight, boolean haveWool){
         this(Height, Weight);
-        setHaveWool(haveWool);
+        this.haveWool=haveWool;
     }
 
     Dog (double Height, double Weight, int VoiceVolume, boolean haveWool){
         this(Height, Weight);
-        setVoiceVolume(VoiceVolume);
-        setHaveWool(haveWool);
+        this.voiceVolume=VoiceVolume;
+        this.haveWool=haveWool;
     }
 
-    @Override
-    protected void setDefault (){
-        setDefaultHeight(1);
-        setDefaultWeight(10);
-        setDefaultHaveWool(true);
-        setDefaultVoiceVolume(70);
+
+    Dog (double Height, double Weight, int VoiceVolume, boolean haveWool, BreedsOfDogs breed){
+        this(Height, Weight, VoiceVolume, haveWool);
+        this.breed=breed;
     }
 
     @Override
@@ -48,6 +52,7 @@ public class Dog extends Animal {
             System.out.println("The dog has no wool.");
 
         System.out.println("Dog volume is " + getVoiceVolume() + ".");
+        System.out.println("This dog is a " + breed.getNameToPrint() + ".");
         System.out.println();
 
     }
