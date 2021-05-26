@@ -1,10 +1,12 @@
-public enum BreedsOfCats {
-    PERSIAN("P", "Persian"),
-    TURKISH_VAN("T", "Turkish van"),
-    SPHINX("S", "Sphinx"),
+package Breeds;
+
+public enum BreedsOfDogs {
+    SHEEP_DOG("S","Sheep dog"),
+    GOLDEN_RETRIVER("G", "Golden Retriver"),
+    CHIHUAHUA("С", "Chihuahua"),
     UNBREEDED("U", "unbreeded");
 
-    private final String shortCode;
+    protected final String shortCode;
     private final String nameToPrint;
 
     public String getDirectionCode() {
@@ -15,11 +17,8 @@ public enum BreedsOfCats {
         return nameToPrint;
     }
 
-    BreedsOfCats(String code, String print) {
+    BreedsOfDogs(String code, String print) {
         this.shortCode = code;
         this.nameToPrint = print;
     }
 }
-
-
-

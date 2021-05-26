@@ -1,9 +1,23 @@
+package Animals;
+
+import Exceptions.NullEqualsException;
+
 public abstract class Animal {
 
     protected double height;
     protected double weight;
     protected boolean haveWool;
     protected int voiceVolume;
+
+    Animal(){
+        try {
+            if (this.voiceVolume == 0){
+                throw new NullEqualsException("Exception: zero values of voice volume.");
+            }
+        }catch (NullEqualsException excp){
+            System.out.println(excp.getMessage());
+        }
+    }
 
     public double getHeight() {
         return height;

@@ -1,3 +1,12 @@
+import Animals.Animal;
+import Animals.Cat;
+import Animals.Dog;
+import Animals.Duck;
+import Breeds.BreedsOfCats;
+import Breeds.BreedsOfDogs;
+import Breeds.BreedsOfDucks;
+import Exceptions.EnumMessageException;
+
 public class Producer {
     public static void main(String[] args) {
 
@@ -12,6 +21,19 @@ public class Producer {
         Animal dagon =  new Cat(0.5, 7);
         String additionalInformationAboutDagon = "This cat isn't afraid of water and loves to make a mess.";
         printInfo(dagon, additionalInformationAboutDagon);
+
+        try {
+            BreedsOfCats.valueOf("Z");
+
+        }catch (IllegalArgumentException excp){
+        }finally {
+            try{
+                throw new EnumMessageException("Exception: Program will ignore that line.");
+            }
+            catch (EnumMessageException excp1){
+                System.out.println(excp1.getMessage());
+            }
+        }
 
     }
 

@@ -1,3 +1,5 @@
+package Breeds;
+
 public enum BreedsOfDucks {
     NORMAL("N", "normal"),
     STRANGE("S", "strange"),
