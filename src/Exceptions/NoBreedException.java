@@ -1,13 +1,12 @@
 package Exceptions;
 
-public class NoBreedException extends Exception {
-    String message;
+public class NoBreedException extends RuntimeException {
 
     public NoBreedException() {
-        this.message = "No message in this exception.";
+        super("No message in this exception.");
     }
 
     public NoBreedException(String message) {
-        this.message = message;
+        super(message);
     }
 }

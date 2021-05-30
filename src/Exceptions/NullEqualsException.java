@@ -1,6 +1,6 @@
 package Exceptions;
 
-public class NullEqualsException extends RuntimeException {
+public class NullEqualsException extends Exception {
     public NullEqualsException() {
     }
 

@@ -8,15 +8,15 @@ public abstract class Animal {
     protected double weight;
     protected boolean haveWool;
     protected int voiceVolume;
+    protected Enum breed;
+    protected String name;
 
-    Animal(){
-        try {
-            if (this.voiceVolume == 0){
-                throw new NullEqualsException("Exception: zero values of voice volume.");
-            }
-        }catch (NullEqualsException excp){
-            System.out.println(excp.getMessage());
-        }
+    public String getName() {
+        return name;
+    }
+
+    public Enum getBreed() {
+        return breed;
     }
 
     public double getHeight() {

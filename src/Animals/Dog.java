@@ -8,121 +8,53 @@ public class Dog extends Animal {
 
     private BreedsOfDogs breed;
 
+    @Override
+    public BreedsOfDogs getBreed() {
+        return breed;
+    }
+
     public Dog (){
-        super();
         this.height=0.5;
         this.weight=7;
         this.voiceVolume=70;
         this.haveWool=true;
         this.breed=BreedsOfDogs.UNBREEDED;
+        this.name="No name";
     }
 
-    public Dog (double Height, double Weight){
+    public Dog (double Height, double Weight, String name){
         this();
         this.height=Height;
         this.weight=Weight;
-        try {
-            this.breed=breed;
-            if (breed == BreedsOfDogs.UNBREEDED){
-                throw new NoBreedException("Exception: WARNING! This animal has no breed.");
-            }
-        }catch (NoBreedException excp){
-            System.out.println(excp.getMessage());
-        }
-        try {
-            if (this.voiceVolume == 0){
-                throw new NullEqualsException("Exception: zero values of voice volume.");
-            }
-        }catch (NullEqualsException excp){
-            System.out.println(excp.getMessage());
-        }
+        this.name=name;
     }
 
-    public Dog (double Height, double Weight, int VoiceVolume){
-        this(Height, Weight);
+    public Dog (double Height, double Weight, int VoiceVolume, String name){
+        this(Height, Weight, name);
         this.voiceVolume=VoiceVolume;
-        try {
-            this.breed=breed;
-            if (breed == BreedsOfDogs.UNBREEDED){
-                throw new NoBreedException("Exception: WARNING! This animal has no breed.");
-            }
-        }catch (NoBreedException excp){
-            System.out.println(excp.getMessage());
-        }
-        try {
-            if (this.voiceVolume == 0){
-                throw new NullEqualsException("Exception: zero values of voice volume.");
-            }
-        }catch (NullEqualsException excp){
-            System.out.println(excp.getMessage());
-        }
     }
 
-    public Dog (double Height, double Weight, boolean haveWool){
-        this(Height, Weight);
+    public Dog (double Height, double Weight, boolean haveWool, String name){
+        this(Height, Weight, name);
         this.haveWool=haveWool;
-        try {
-            this.breed=breed;
-            if (breed == BreedsOfDogs.UNBREEDED){
-                throw new NoBreedException("Exception: WARNING! This animal has no breed.");
-            }
-        }catch (NoBreedException excp){
-            System.out.println(excp.getMessage());
-        }
-        try {
-            if (this.voiceVolume == 0){
-                throw new NullEqualsException("Exception: zero values of voice volume.");
-            }
-        }catch (NullEqualsException excp){
-            System.out.println(excp.getMessage());
-        }
     }
 
-    public Dog (double Height, double Weight, int VoiceVolume, boolean haveWool){
-        this(Height, Weight);
+    public Dog (double Height, double Weight, int VoiceVolume, boolean haveWool, String name){
+        this(Height, Weight, name);
         this.voiceVolume=VoiceVolume;
         this.haveWool=haveWool;
-        try {
-            this.breed=breed;
-            if (breed == BreedsOfDogs.UNBREEDED){
-                throw new NoBreedException("Exception: WARNING! This animal has no breed.");
-            }
-        }catch (NoBreedException excp){
-            System.out.println(excp.getMessage());
-        }
-        try {
-            if (this.voiceVolume == 0){
-                throw new NullEqualsException("Exception: zero values of voice volume.");
-            }
-        }catch (NullEqualsException excp){
-            System.out.println(excp.getMessage());
-        }
     }
 
 
-    public Dog(double Height, double Weight, int VoiceVolume, boolean haveWool, BreedsOfDogs breed){
-        this(Height, Weight, VoiceVolume, haveWool);
-        try {
-            this.breed=breed;
-            if (breed == BreedsOfDogs.UNBREEDED){
-                throw new NoBreedException("Exception: WARNING! This animal has no breed.");
-            }
-        }catch (NoBreedException excp){
-            System.out.println(excp.getMessage());
-        }
-        try {
-            if (this.voiceVolume == 0){
-                throw new NullEqualsException("Exception: zero values of voice volume.");
-            }
-        }catch (NullEqualsException excp){
-            System.out.println(excp.getMessage());
-        }
+    public Dog(double Height, double Weight, int VoiceVolume, boolean haveWool, BreedsOfDogs breed, String name){
+        this(Height, Weight, VoiceVolume, haveWool, name);
+        this.breed=breed;
     }
 
     @Override
     public void printInfo() {
 
-        System.out.println("This is a Animals.Dog.");
+        System.out.println("This is " + getName() + ". It's a Dog.");
         System.out.println();
         System.out.println("Dog height is " + getHeight() + ".");
         System.out.println("Dog weight is " + getWeight() + ".");
