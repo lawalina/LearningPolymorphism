@@ -1,7 +1,5 @@
 package Animals;
 
-import Exceptions.NullEqualsException;
-
 public abstract class Animal {
 
     protected double height;
@@ -10,6 +8,15 @@ public abstract class Animal {
     protected int voiceVolume;
     protected Enum breed;
     protected String name;
+    protected String additionalInformation;
+
+    public String getAdditionalInformation() {
+        return additionalInformation;
+    }
+
+    public void setAdditionalInformation(String additionalInformation) {
+        this.additionalInformation = additionalInformation;
+    }
 
     public String getName() {
         return name;
@@ -52,7 +59,5 @@ public abstract class Animal {
     }
 
 
-    public abstract void printInfo ();
-
-    public abstract void printInfo(String additionalInformation);
+    public abstract void printInfo();
 }

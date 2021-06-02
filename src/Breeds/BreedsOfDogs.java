@@ -1,7 +1,7 @@
 package Breeds;
 
 public enum BreedsOfDogs {
-    SHEEP_DOG("S","Sheep dog"),
+    SHEEP_DOG("S", "Sheep dog"),
     GOLDEN_RETRIVER("G", "Golden Retriver"),
     CHIHUAHUA("С", "Chihuahua"),
     UNBREEDED("U", "unbreeded");
