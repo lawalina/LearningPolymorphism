@@ -6,9 +6,7 @@ import Exceptions.EnumMessageException;
 import Exceptions.NoBreedException;
 import Exceptions.NullEqualsException;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Vector;
+import java.util.*;
 
 public class Producer {
     public static void main(String[] args) throws NullEqualsException {
@@ -20,6 +18,55 @@ public class Producer {
 
             String additionalInformationAboutDagon = "This cat isn't afraid of water and loves to make a mess.";
             Animal dagon = new Cat(0.5, 7, "Dagon", additionalInformationAboutDagon);
+
+
+            //Stack
+
+            Stack<Animal> animalStack= new Stack<>();
+
+            animalStack.push(ayka);
+            animalStack.push(sipsik);
+            animalStack.push(strangeDuck);
+            animalStack.push(dagon);
+
+            Stack<GenericAnimal> genericAnimalStack = new Stack<>();
+
+            while (!animalStack.empty()){
+                genericAnimalStack.push(new GenericAnimal (animalStack.pop()));
+            }
+
+            System.out.println("");
+            System.out.println("This is a Stack!");
+            System.out.println("");
+
+            while (!genericAnimalStack.empty()){
+                genericAnimalStack.pop().printInfo();
+            }
+
+            //PriorityQueue
+
+            PriorityQueue<Animal> animalPriorityQueue = new PriorityQueue<>();
+
+            animalPriorityQueue.offer(ayka);
+            animalPriorityQueue.offer(sipsik);
+            animalPriorityQueue.offer(strangeDuck);
+            animalPriorityQueue.offer(dagon);
+
+            PriorityQueue<GenericAnimal> animalPriorityQueueGenerics = new PriorityQueue<>();
+
+            while (animalPriorityQueue.size() != 0){
+                animalPriorityQueueGenerics.offer(new GenericAnimal(animalPriorityQueue.element()));
+                animalPriorityQueue.poll();
+            }
+
+            System.out.println("");
+            System.out.println("This is a Priority Queue!");
+            System.out.println("");
+
+            while (animalPriorityQueueGenerics.size() != 0){
+                animalPriorityQueueGenerics.element().printInfo();
+                animalPriorityQueueGenerics.poll();
+            }
 
             //Vector
 

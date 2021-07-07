@@ -1,6 +1,6 @@
 package Animals;
 
-public class GenericAnimal<T extends Animal> {
+public class GenericAnimal<T extends Animal> implements Comparable<GenericAnimal> {
     private T animal;
 
     public GenericAnimal(T animal) {
@@ -11,4 +11,8 @@ public class GenericAnimal<T extends Animal> {
         animal.printInfo();
     }
 
+    @Override
+    public int compareTo(GenericAnimal genericAnimal) {
+        return this.animal.compareTo(genericAnimal.animal);
+    }
 }
