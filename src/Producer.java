@@ -19,6 +19,28 @@ public class Producer {
             String additionalInformationAboutDagon = "This cat isn't afraid of water and loves to make a mess.";
             Animal dagon = new Cat(0.5, 7, "Dagon", additionalInformationAboutDagon);
 
+            //DequeArray
+
+            Deque<Animal> animalDequeArray = new ArrayDeque<>();
+
+            animalDequeArray.offer(sipsik);
+            animalDequeArray.add(strangeDuck);
+            animalDequeArray.addFirst(ayka);
+            animalDequeArray.addLast(dagon);
+
+            Deque<GenericAnimal> genericAnimalArrayDeque= new ArrayDeque<>();
+
+            while (!animalDequeArray.isEmpty()){
+                genericAnimalArrayDeque.offer(new GenericAnimal(animalDequeArray.pollLast()));
+            }
+
+            System.out.println("");
+            System.out.println("This is a Array Deque!");
+            System.out.println("");
+
+            while (!genericAnimalArrayDeque.isEmpty()){
+                genericAnimalArrayDeque.pollLast().printInfo();
+            }
 
             //Stack
 
