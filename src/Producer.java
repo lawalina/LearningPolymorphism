@@ -19,6 +19,56 @@ public class Producer {
             String additionalInformationAboutDagon = "This cat isn't afraid of water and loves to make a mess.";
             Animal dagon = new Cat(0.5, 7, "Dagon", additionalInformationAboutDagon);
 
+            //TreeSet
+
+            TreeSet<Animal> animalTreeSet =  new TreeSet<>();
+
+            animalTreeSet.add(sipsik);
+            animalTreeSet.add(strangeDuck);
+            animalTreeSet.add(ayka);
+            animalTreeSet.add(dagon);
+
+            TreeSet<GenericAnimal> genericAnimalTreeSet = new TreeSet<>();
+
+            for (Animal animal :
+                    animalTreeSet) {
+                genericAnimalTreeSet.add(new GenericAnimal(animal));
+            }
+
+            System.out.println("");
+            System.out.println("This is a Tree Set!");
+            System.out.println("");
+
+            for (GenericAnimal<Animal> genericAnimal :
+                    genericAnimalTreeSet) {
+                genericAnimal.printInfo();
+            }
+
+            //HashSet
+
+            HashSet<Animal> animalHashSet = new HashSet<>();
+
+            animalHashSet.add(sipsik);
+            animalHashSet.add(strangeDuck);
+            animalHashSet.add(ayka);
+            animalHashSet.add(dagon);
+
+            HashSet<GenericAnimal> genericAnimalHashSet = new HashSet<>();
+
+            for (Animal animal :
+                    animalHashSet) {
+                genericAnimalHashSet.add(new GenericAnimal(animal));
+            }
+
+            System.out.println("");
+            System.out.println("This is a Hash Set!");
+            System.out.println("");
+
+            for (GenericAnimal<Animal> genericAnimal :
+                    genericAnimalHashSet){
+                genericAnimal.printInfo();
+            }
+
             //DequeArray
 
             Deque<Animal> animalDequeArray = new ArrayDeque<>();
